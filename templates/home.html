@@ -219,9 +219,8 @@
         .features .feature-card:hover .icon {
             color: #121212; /* Ensure icons also match the hover effect */
         }
-        /* Media queries for responsiveness */
-
-        /* For small devices (phones, less than 576px) */
+        
+        /* For phones (up to 575.98px) */
         @media (max-width: 575.98px) {
             body {
                 font-size: 14px; /* Smaller base font size for phones */
@@ -241,6 +240,7 @@
 
             .card {
                 max-width: 100%; /* Allow cards to take full width */
+                margin-bottom: 1.5rem; /* Add spacing between cards */
             }
 
             .features {
@@ -254,6 +254,10 @@
             .btn-primary {
                 font-size: 0.9rem; /* Smaller buttons */
                 padding: 10px 16px;
+            }
+
+            .col-md-4 {
+                padding-bottom: 30px;
             }
         }
 
@@ -338,6 +342,21 @@
                 width: 120px; /* Smaller image for cards */
                 height: 120px;
             }
+        }
+
+        .features {
+            padding: 4rem 0;
+            margin-bottom: 3rem; /* Add space below feature cards */
+        }
+
+        /* Increase gap between headline and team members */
+        .team {
+            margin-top: 4rem; /* Add space above the team section */
+        }
+
+        /* Additional styling for team cards if needed */
+        .card.text-center {
+            margin-bottom: 2rem; /* Add space between individual team member cards */
         }
     </style>
 </head>
@@ -452,7 +471,7 @@
 
     <!-- Team Section -->
     <div id="team" class="container my-5 fade-in-up">
-        <h2 class="text-center text-light mb-4"><i class="bi bi-people-fill me-2"></i>Get to Know Us</h2>
+        <h2 class="text-center text-light mb-4" style="padding-bottom: 50px;"><i class="bi bi-people-fill me-2"></i>Get to Know Us</h2>
         <div class="row justify-content-center">
             <!-- Team Member 1 -->
             <div class="col-md-4 d-flex justify-content-center mb-4">
