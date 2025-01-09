@@ -93,50 +93,40 @@ The entire process is integrated into a **Flask web app** with interactive data 
 
 1. **Clone the repository**:
 
-   Clone the project to your local machine:
+    Clone the project to your local machine:
 
-   ```bash
-   git clone https://github.com/yourusername/social-media-engagement.git
-   cd social-media-engagement
-   ```
-   
-
-
-### Steps
-
-1. Clone the repository:
-```
-git clone https://github.com/yourusername/social-media-engagement.git
-cd social-media-engagement
-```
+    ```bash
+    git clone https://github.com/yourusername/social-media-engagement.git
+    cd social-media-engagement
+    ``` 
 
 2. Set up a virtual environment:
 
-```bash
-python3 -m venv venv
-source venv/bin/activate # For macOS/Linux
-venv\Scripts\activate # For Windows
-```
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate # For macOS/Linux
+    venv\Scripts\activate # For Windows
+    ```
 
 3. Install required dependencies:
 
-```
-pip install -r requirements.txt
-```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 4. Configure Astra DB:
 
-- Set up your Astra DB account and create a new collection for social media engagement data.
-- Update connection details in `config.py`.
+  - Set up your Astra DB account and create a new collection for social media engagement data.
+  - Update connection details in `config.py`.
 
 5. Run the Flask app:
 
-```
-python app.py
-```
+    ```bash
+    python app.py
+    ```
 
 6. Access the app:
 
-Open a web browser and go to `http://127.0.0.1:5000` to interact with the app.
+  Open a web browser and go to `http://127.0.0.1:5000` to interact with the app.
 
 
