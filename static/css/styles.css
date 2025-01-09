@@ -1,6 +1,7 @@
+/* General styles */
 body {
-    background-color: #121212;
-    color: #e0e0e0;
+    background-color: #121212; /* Dark background for a sleek look */
+    color: #e0e0e0; /* Light text color for contrast */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -9,11 +10,11 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-
+/* Ensure both containers maintain equal height */
 .row {
     display: flex;
-    align-items: stretch;
-    gap: 1rem;
+    align-items: stretch; /* Ensures both columns align properly */
+    gap: 1rem; /* Adds spacing between columns */
 }
 
 .col-md-6 {
@@ -21,30 +22,31 @@ body {
     flex-direction: column;
 }
 
+/* Card styles */
 .card {
     margin-bottom: 1.5rem;
-    flex-grow: 1;
+    flex-grow: 1; /* Ensures cards fill the height of their container */
     background-color: #1e1e1e;
 }
 
-
+/* Limit and match heights for both cards */
 .card-body {
-    max-height: 300px;
-    overflow-y: auto; 
-    scroll-behavior: smooth;
+    max-height: 300px; /* Set the same max-height for both Q&A and conversation cards */
+    overflow-y: auto; /* Enables scrolling for overflow content */
+    scroll-behavior: smooth; /* Adds smooth scrolling behavior */
     color: #ffffff;
 }
 
 .hover-effect {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Increased duration to 0.4s */
 }
 
 .hover-effect:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow to match a white aesthetic */
 }
 
-
+/* Loading card */
 .loading-card {
     text-align: center;
     padding: 1rem;
@@ -57,6 +59,7 @@ body {
     display: none !important;
 }
 
+/* Chat form styling */
 .chat-form {
     margin-top: 1.5rem;
     text-align: center;
@@ -67,55 +70,60 @@ body {
     max-width: 600px;
 }
 
-
+/* Smooth scrolling for cards */
 #qna-card .card-body,
 .conversation-card .card-body {
-    scrollbar-width: thin; 
-    scrollbar-color: #6c757d #f1f1f1;
+    scrollbar-width: thin; /* Firefox: Thin scrollbar */
+    scrollbar-color: #6c757d #f1f1f1; /* Firefox: Custom gray colors */
 }
 
 #qna-card .card-body::-webkit-scrollbar,
 .conversation-card .card-body::-webkit-scrollbar {
-    width: 8px; 
+    width: 8px; /* Width of scrollbar */
 }
 
 #qna-card .card-body::-webkit-scrollbar-thumb,
 .conversation-card .card-body::-webkit-scrollbar-thumb {
-    background: #6c757d; 
+    background: #6c757d; /* Dark gray scrollbar thumb */
     border-radius: 4px;
 }
 
 #qna-card .card-body::-webkit-scrollbar-track,
 .conversation-card .card-body::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f1f1f1; /* Light gray scrollbar track */
 }
 
+/* Ensure both containers maintain equal height */
 .row {
     display: flex;
-    flex-wrap: wrap;
-    align-items: stretch; 
-    gap: 1rem; 
+    flex-wrap: wrap; /* Allow columns to wrap if needed */
+    align-items: stretch; /* Ensures both columns align properly */
+    gap: 1rem; /* Adds spacing between columns */
 }
 
+/* Each column should take equal space */
 .col-md-6 {
     display: flex;
     flex-direction: column;
-    flex: 1; 
+    flex: 1; /* Ensures both columns grow equally */
 }
 
+/* Cards to ensure they fill the height of the container */
 .card {
     margin-bottom: 1.5rem;
-    flex-grow: 1;
+    flex-grow: 1; /* Ensures cards fill the height of their container */
 }
 
+/* Apply smooth scrolling */
 .card-body {
-    max-height: 300px;
-    overflow-y: auto; 
+    max-height: 300px; /* Limit height for scrolling */
+    overflow-y: auto; /* Enables scrolling for overflow content */
     scroll-behavior: smooth;
 }
 
+/* Add soft accent color to buttons */
 .btn-primary {
-    background-color: #ffffff; 
+    background-color: #ffffff; /* Accent color */
     border-color: #ffffff;
     color: #121212;
     padding: 0.5rem 1rem;
@@ -125,15 +133,15 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #121212; 
+    background-color: #121212; /* Darker shade on hover */
     border-color: #121212;
-    color: #ffffff;
+    color: #ffffff; /* Darker gray on hover */
 }
 
 #conversation {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 1rem;
-    color: #ffffff; 
+    font-size: 1rem; /* Ensure consistency in font size */
+    color: #ffffff; /* Consistent color */
 }
 
 .message {
@@ -142,115 +150,129 @@ body {
     color: #ffffff;
 }
 
+/* Textarea Styling */
 .chat-form textarea {
     resize: none;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-size: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* Light border for input areas */
     border-radius: 0.5rem;
     padding: 0.5rem;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Light background for text areas */
     color: #ffffff;
 }
 
+/* Smooth Scrolling */
 .card-body {
     scroll-behavior: smooth;
 }
 
 #latest-response {
-    font-style: normal; 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #ffffff;
+    font-style: normal; /* Remove italic styling */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Match font family */
+    color: #ffffff; /* Light gray color for consistency */
     padding: 1rem;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1rem; /* Adjust font size to match conversation column */
 }
 
+/* Adjust Card Spacing */
 .row {
-    gap: 2rem;
+    gap: 2rem; /* More space between columns */
 }
 
+/* Navbar Styling */
 .navbar {
-    background-color: #1f1f1f; 
+    background-color: #1f1f1f; /* Dark background for the navbar */
     padding: 1rem 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Navbar logo styling */
 .navbar-brand {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-weight: bold;
     font-size: 1.5rem;
-    color: #ffffff;
-    transition: color 0.3s ease;
+    color: #ffffff; /* White color for the logo */
+    transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
 .navbar-brand:hover {
-    color: #ffffff;
+    color: #ffffff; /* Keep white on hover */
     transform: scale(1.01);
 }
 
+/* Navbar links */
 .navbar-nav .nav-link {
-    color: #ffffff; 
+    color: #ffffff; /* White color for navbar links */
     font-size: 1rem;
-    font-weight: 500; 
-    transition: color 0.3s ease, transform 0.3s ease; 
+    font-weight: 500; /* Slightly bold */
+    transition: color 0.3s ease, transform 0.3s ease; /* Transition for color and scaling */
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ffffff;
-    transform: scale(1.01);
+    color: #ffffff; /* Keep white color on hover */
+    transform: scale(1.01); /* Slight scale effect on hover */
 }
 
+/* Navbar active link */
 .navbar-nav .nav-link.active {
-    color: #ffffff; 
-    font-weight: 600; 
+    color: #ffffff; /* White for active link */
+    font-weight: 600; /* Make active link more prominent */
 }
 
+/* Navbar toggle button (for mobile view) */
 .navbar-toggler {
-    border-color: #ffffff;
+    border-color: #ffffff; /* White border for the toggler */
 }
 
 .navbar-toggler-icon {
-    background-color: #ffffff; 
+    background-color: #ffffff; /* White icon for the toggler */
 }
 
+/* Navbar on scroll: subtle color change */
 .navbar.scrolled {
-    background-color: #1f1f1f; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    background-color: #1f1f1f; /* Keep dark background when scrolled */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow when scrolled */
 }
 
+/* Transition effect when hovering over navbar */
 .navbar:hover {
-    background-color: #1f1f1f;
+    background-color: #1f1f1f; /* Keep dark background hover effect */
     transition: background-color 0.3s ease;
 }
 
 
+/* Title Font Styling */
 h1.text-center {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-weight: bold;
-    color: #6c757d; 
-    font-size: 2.5rem;
+    font-weight: bold; /* Make the title bold */
+    color: #6c757d; /* Light gray color for consistency with the navbar */
+    font-size: 2.5rem; /* Adjust the size as needed */
 }
 
 
+/* Keyframes for the fade-in and slide-up effect */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(20px); /* Start slightly below */
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0); /* At the original position */
     }
 }
 
+/* Apply animation globally */
 .fade-in-up {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease-in-out forwards;
 }
 
+/* Stagger the animation for different sections */
 .fade-in-up:nth-child(1) {
     animation-delay: 0.2s;
 }
@@ -272,68 +294,70 @@ h1.text-center {
 }
 
 @media (max-width: 1200px) {
+    /* For tablets and smaller screens */
     .col-md-6 {
-        flex: 1 1 100%; 
+        flex: 1 1 100%; /* Make the columns take full width on smaller screens */
     }
 
     .navbar {
-        padding: 1rem; 
+        padding: 1rem; /* Reduce navbar padding for smaller screens */
     }
 
     .navbar-nav .nav-link {
-        font-size: 0.9rem; 
+        font-size: 0.9rem; /* Slightly smaller font size for navbar links */
     }
 
     .card-body {
-        max-height: 250px; 
+        max-height: 250px; /* Reduce max height for cards */
     }
 }
 
 @media (max-width: 768px) {
+    /* For mobile devices */
     .navbar-brand {
-        font-size: 1.25rem; 
+        font-size: 1.25rem; /* Smaller font size for the logo */
     }
 
     .navbar-nav .nav-link {
-        font-size: 0.85rem;
+        font-size: 0.85rem; /* Smaller font size for navbar links */
     }
 
     .row {
-        flex-direction: column;
+        flex-direction: column; /* Stack the columns vertically on mobile */
     }
 
     .col-md-6 {
-        flex: 1 1 100%; 
+        flex: 1 1 100%; /* Ensure columns take up 100% width on mobile */
     }
 
     .card-body {
-        max-height: 200px; 
+        max-height: 200px; /* Reduce max height for cards */
     }
 
     .chat-form .input-group {
-        width: 100%; 
+        width: 100%; /* Ensure the chat form input group is full-width */
     }
 }
 
 @media (max-width: 576px) {
-
+    /* For very small screens like phones in portrait mode */
     .navbar {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 1rem; /* Reduced padding for very small screens */
     }
 
     .navbar-nav .nav-link {
-        font-size: 0.8rem;
+        font-size: 0.8rem; /* Even smaller font size for links */
     }
 
     .card-body {
-        max-height: 150px;
+        max-height: 150px; /* Further reduce the max height for cards */
     }
 
     .chat-form textarea {
-        font-size: 0.9rem;
+        font-size: 0.9rem; /* Slightly smaller font size for textarea */
     }
 
     h1.text-center {
-        font-size: 2rem;
+        font-size: 2rem; /* Smaller title for small screens */
     }
 }
