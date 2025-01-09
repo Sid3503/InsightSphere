@@ -12,8 +12,9 @@ BASE_API_URL = os.environ.get("BASE_API_URL")
 LANGFLOW_ID = os.environ.get("LANGFLOW_ID")
 FLOW_ID = os.environ.get("FLOW_ID")
 APPLICATION_TOKEN = os.environ.get("APP_TOKEN")
-ENDPOINT = "lang1"  
+ENDPOINT = "lang1"  # The endpoint name of the flow
 
+# Conversation history
 conversation = []
 
 
@@ -45,25 +46,31 @@ def index():
 def demo_video():
     return render_template('video.html')
 
-# Dashboard route
 @app.route("/dashboard")
 def dashboard():
-    csv_file = "/cleaned_10k_new.csv"
+    csv_file = "C:/Users/Siddharth/Desktop/lang/lang/cleaned_10k_new.csv"
     
+    # Load CSV dynamically
     df = pd.read_csv(csv_file)
     
+    # Calculate Likes and Comments by Platform
     platform_stats = df.groupby('Platform').agg({'Likes': 'sum', 'Comments': 'sum'}).reset_index()
     
+    # Calculate Engagement Rate by Platform
     df['Engagement Rate'] = (df['Likes'] + df['Comments']) / df['Impressions']
     engagement_stats = df.groupby('Platform')['Engagement Rate'].mean().reset_index()
 
+    # Likes-to-Comments Ratio by Platform
     df['Likes-to-Comments Ratio'] = df['Likes'] / df['Comments'].replace(0, 1)
     ratio_stats = df.groupby('Platform')['Likes-to-Comments Ratio'].mean().reset_index()
 
+    # Reach and Impressions by Platform
     reach_impressions_stats = df.groupby('Platform').agg({'Reach': 'sum', 'Impressions': 'sum'}).reset_index()
 
+    # Audience Age statistics (Age vs Likes, Comments)
     age_stats = df.groupby('Audience_Age').agg({'Likes': 'mean', 'Comments': 'mean'}).reset_index()
 
+    # New: Stats by Post Type
     post_type_stats = df.groupby('Post_Type').agg({'Likes': 'sum', 'Comments': 'sum', 'Shares': 'sum'}).reset_index()
 
     df['Shares-to-Likes Ratio'] = df['Shares'] / df['Likes'].replace(0, 1)
@@ -83,6 +90,7 @@ def dashboard():
         'Shares': 'sum'
     }).reset_index()
 
+    # Convert data to JSON format for Chart.js
     chart_data = {
         'labels': platform_stats['Platform'].tolist(),
         'likes': platform_stats['Likes'].tolist(),
