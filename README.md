@@ -92,4 +92,8 @@ The entire process is integrated into a **Flask web app** with interactive data 
 ### Steps
 
 1. Clone the repository:
+```
+git clone https://github.com/yourusername/social-media-engagement.git
+cd social-media-engagement
+```
 
