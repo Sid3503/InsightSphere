@@ -48,7 +48,7 @@ def demo_video():
 
 @app.route("/dashboard")
 def dashboard():
-    csv_file = "C:/Users/Siddharth/Desktop/lang/lang/cleaned_10k_new.csv"
+    csv_file = "data/cleaned_10k_new.csv"
     
     # Load CSV dynamically
     df = pd.read_csv(csv_file)
