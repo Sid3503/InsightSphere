@@ -115,7 +115,6 @@ The entire process is integrated into a **Flask web app** with interactive data 
     ```
 
 4. Configure Astra DB:
-
   - Set up your Astra DB account and create a new collection for social media engagement data.
   - Update connection details in `config.py`.
 
@@ -126,7 +125,4 @@ The entire process is integrated into a **Flask web app** with interactive data 
     ```
 
 6. Access the app:
-
   Open a web browser and go to `http://127.0.0.1:5000` to interact with the app.
-
-
