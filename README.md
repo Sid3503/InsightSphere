@@ -116,8 +116,8 @@ The entire process is integrated into a **Flask web app** with interactive data 
 
 4. Configure Astra DB:
    
-  - Set up your Astra DB account and create a new collection for social media engagement data.
-  - Update connection details in `config.py`.
+    - Set up your Astra DB account and create a new collection for social media engagement data.
+    - Update connection details in `config.py`.
 
 5. Run the Flask app:
 
