@@ -40,6 +40,11 @@ def home():
 @app.route("/chat")
 def index():
     return render_template("index.html", conversation=conversation)
+
+@app.route('/video')
+def demo_video():
+    return render_template('video.html')
+
 # Dashboard route
 @app.route("/dashboard")
 def dashboard():
