@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | InsightSphere</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /* General body styling */
+        body {
+            background-color: #121212; /* Dark background for a sleek look */
+            color: #e0e0e0; /* Light text color for contrast */
+            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        /* Navbar styling */
+        nav.navbar {
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: #1f1f1f; /* Darker background for the navbar */
+        }
+
+        nav.navbar .navbar-brand {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #ffffff; /* White brand color */
+            transition: color 0.3s ease;
+        }
+
+        nav.navbar .navbar-brand:hover {
+            color: #ffffff; /* Highlight color on hover (green for freshness) */
+            transform: scale(1.01);
+        }
+
+        nav.navbar .navbar-nav .nav-link {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #ccc; /* Light grey for nav links */
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav.navbar .navbar-nav .nav-link:hover {
+            color: #ffffff; /* Accent color on hover */
+            transform: scale(1.01);
+        }
+
+        .navbar-toggler {
+            border-color: #ffffff; /* Gray color for the toggler */
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff; /* Gray icon for the toggler */
+        }
+
+        /* Social icon styling */
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .social-icon.linkedin {
+            background-color: #0e76a8; /* LinkedIn blue */
+        }
+
+        .social-icon.github {
+            background-color: #333; /* GitHub black */
+        }
+
+        /* Hover effect */
+        .social-icon:hover {
+            transform: scale(1.1);
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .social-icon.linkedin:hover {
+            background-color: #0b5c8a;
+        }
+
+        .social-icon.github:hover {
+            background-color: #1d1d1d;
+        }
+
+        .card {
+            max-width: 280px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+            background-color: #1e1e1e; /* Dark background for cards */
+            transition: transform 0.6s ease, box-shadow 0.6s ease, color 0.6s ease;
+            color: #aaa; /* Default text color */
+        }
+
+        /* Hover effect for cards */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+            color: #ffffff; /* Change text color to white */
+        }
+
+        /* Team image styling */
+        .card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto;
+            margin-top: -50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-body {
+            padding-top: 15px;
+        }
+
+        /* Team member card hover effect */
+        .card.text-center {
+            transition: transform 0.6s ease, background-color 0.6s ease, box-shadow 0.6s ease, color 0.6s ease;
+        }
+
+        .card.text-center:hover {
+            transform: translateY(-10px);
+            background-color: #282828; /* Slightly lighter shade on hover */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5); /* Enhanced shadow effect */
+            color: #ffffff; /* Change text color to white */
+        }
+
+        /* Ensure links inside the cards also change color */
+        .card.text-center a {
+            color: #aaa; /* Default link color */
+            transition: color 0.6s ease;
+        }
+
+        .card.text-center:hover a {
+            color: #ffffff; /* Change link color to white on hover */
+        }
+
+        .btn-primary {
+            background-color: #ffffff; /* Accent color */
+            border-color: #ffffff;
+            color: #121212; /* Set text color to dark */
+        }
+
+        .btn-primary:hover {
+            background-color: #121212; /* Darker shade on hover */
+            border-color: #121212;
+            color: #ffffff; /* White text color on hover */
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        .fade-in-up:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .fade-in-up:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .fade-in-up:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .fade-in-up:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .features {
+            padding: 4rem 0;
+        }
+
+        .features .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .features .feature-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.8s, background-color 0.8s, color 0.8s;
+            color: #e0e0e0; /* Default text color */
+            animation: fadeInUp 1s ease-in-out forwards;
+        }
+
+        .features .feature-card:hover {
+            transform: translateY(-10px);
+            background-color: #ffffff; /* Accent background color on hover */
+            color: #121212; /* Text color changes to dark on hover */
+        }
+
+        .features .feature-card:hover .icon {
+            color: #121212; /* Ensure icons also match the hover effect */
+        }
+        /* Media queries for responsiveness */
+
+        /* For small devices (phones, less than 576px) */
+        @media (max-width: 575.98px) {
+            body {
+                font-size: 14px; /* Smaller base font size for phones */
+            }
+
+            nav.navbar {
+                padding: 0.8rem 1rem;
+            }
+
+            nav.navbar .navbar-brand {
+                font-size: 1.2rem; /* Adjust navbar brand size */
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .card {
+                max-width: 100%; /* Allow cards to take full width */
+            }
+
+            .features {
+                padding: 2rem 0; /* Reduce padding for small screens */
+            }
+
+            .features .feature-card {
+                padding: 1.5rem;
+            }
+
+            .btn-primary {
+                font-size: 0.9rem; /* Smaller buttons */
+                padding: 10px 16px;
+            }
+        }
+
+        /* For medium devices (tablets, 576px and up) */
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            body {
+                font-size: 15px; /* Slightly larger font size */
+            }
+
+            .features {
+                padding: 3rem 1rem; /* Adjust padding */
+            }
+
+            .features .feature-card {
+                padding: 1.8rem;
+            }
+
+            .card {
+                margin-bottom: 2rem; /* Add spacing between cards */
+            }
+
+            .btn-primary {
+                font-size: 1rem; /* Medium-sized buttons */
+            }
+        }
+
+        /* For large devices (desktops, 768px and up) */
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            nav.navbar .navbar-brand {
+                font-size: 1.4rem; /* Larger navbar brand for tablets */
+            }
+
+            .features {
+                padding: 4rem 2rem; /* Restore more generous padding */
+            }
+
+            .features .feature-card {
+                padding: 2rem;
+            }
+
+            .card {
+                max-width: 250px; /* Adjust card size */
+            }
+        }
+
+        /* For extra-large devices (larger desktops, 1200px and up) */
+        @media (min-width: 1200px) {
+            body {
+                font-size: 16px; /* Default font size for large screens */
+            }
+
+            .features {
+                padding: 5rem 3rem; /* Add more padding for extra-large screens */
+            }
+
+            .features .feature-card {
+                padding: 2.5rem;
+            }
+
+            .card {
+                max-width: 300px; /* Larger card size */
+            }
+
+            .btn-primary {
+                font-size: 1.2rem; /* Larger buttons */
+            }
+        }
+
+        /* Responsive utilities for alignment */
+
+        /* Center content for smaller screens */
+        @media (max-width: 768px) {
+            .text-center {
+                text-align: center; /* Ensure all text is centered */
+            }
+
+            .social-icon {
+                margin: 0 auto; /* Center social icons */
+            }
+
+            .card img {
+                width: 120px; /* Smaller image for cards */
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fade-in-up">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="/">
+                <i class="bi bi-app-indicator" style="font-size: 1.5rem; margin-right: 10px;"></i>
+                InsightSphere
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/">
+                            <i class="bi bi-house" style="margin-right: 8px;"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/chat">
+                            <i class="bi bi-chat-left-text" style="margin-right: 8px;"></i>Chat
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="/dashboard">
+                            <i class="bi bi-clipboard-data" style="margin-right: 8px;"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#team">
+                            <i class="bi bi-person-circle" style="margin-right: 8px;"></i>About Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container d-flex align-items-center justify-content-center min-vh-100 position-relative">
+        <!-- Background Image -->
+        <div class="background-image position-absolute" style="
+            background: url('/static/images/pawel-czerwinski-emg1v4YlQw4-unsplash.jpg') no-repeat center center;
+            background-size: cover;
+            width: 80%; /* Adjust the size of the image */
+            height: 80%; /* Adjust the size of the image */
+            border-radius: 20px; /* Apply border radius */
+            animation: fade-in-up 1s ease-in-out;
+            z-index: 1;
+        "></div>
+    
+        <!-- Home Content -->
+        <div class="text-center fade-in-up position-relative" style="z-index: 2;">
+            <h1 class="text-light mb-4">
+                <i class="bi bi-lightbulb" style="font-size: 2.5rem; margin-right: 10px;"></i>
+                Welcome to <strong>InsightSphere</strong>
+            </h1>
+            <p class="text-light mb-4">
+                <i class="bi bi-chevron-double-right" style="margin-right: 5px;">Ready to explore? Ask your questions and receive helpful responses from our chatbot.</i>
+            </p>
+            <a href="/chat" class="btn btn-primary btn-lg">
+                <i class="bi bi-arrow-right-circle" style="margin-right: 8px;"></i> Go to Chat
+            </a>
+        </div>
+    </div>
+
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container text-center fade-in-up">
+            <h2>Discover Our Benefits</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <a href="/chat" class="text-decoration-none">
+                        <div class="feature-card">
+                            <i class="bi bi-lightning-charge icon"></i>
+                            <h4>Smart Insights</h4>
+                            <p>Get intelligent insights tailored to your queries.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/dashboard" class="text-decoration-none">
+                        <div class="feature-card">
+                            <i class="bi bi-graph-up icon"></i>
+                            <h4>Analytics</h4>
+                            <p>Detailed analytics to empower your decisions.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/chat" class="text-decoration-none">
+                        <div class="feature-card">
+                            <i class="bi bi-chat-left-text icon"></i>
+                            <h4>Interactive Chat</h4>
+                            <p>Dive into thought-provoking discussions.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <div id="team" class="container my-5 fade-in-up">
+        <h2 class="text-center text-light mb-4"><i class="bi bi-people-fill me-2"></i>Get to Know Us</h2>
+        <div class="row justify-content-center">
+            <!-- Team Member 1 -->
+            <div class="col-md-4 d-flex justify-content-center mb-4">
+                <div class="card text-center">
+                    <img src="/static/images/8c0dc119-a089-42a1-a7e1-60fc5ec5d5bb.jpg" alt="Siddharth">
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Siddharth Mishra</h5>
+                        <p class="card-text text-light">
+                            <i class="bi bi-envelope me-2"></i>
+                            <a href="mailto:mishrasiddharth072@gmail.com" class="text-light">mishrasiddharth072@gmail.com</a>
+                        </p>
+                        <div class="d-flex justify-content-center">
+                            <a href="https://www.linkedin.com/in/siddharth-mishra-0a5227228/" target="_blank" class="social-icon linkedin me-2">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/Sid3503" target="_blank" class="social-icon github">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="col-md-4 d-flex justify-content-center mb-4 fade-in-up">
+                <div class="card text-center">
+                    <img src="/static/images/b9faffb1-b91a-474f-9290-b3a890c44222.jpg" alt="Manoday">
+                    <div class="card-body">
+                        <h5 class="card-title text-light">Manoday Kadam</h5>
+                        <p class="card-text text-light">
+                            <i class="bi bi-envelope me-2"></i>
+                            <a href="mailto:manodaykadam105@gmail.com" class="text-light">manodaykadam105@gmail.com</a>
+                        </p>
+                        <div class="d-flex justify-content-center">
+                            <a href="https://www.linkedin.com/in/manoday-kadam-3b1a74268/" target="_blank" class="social-icon linkedin me-2">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/Manoday10" target="_blank" class="social-icon github">
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
