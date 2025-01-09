@@ -228,7 +228,7 @@ body {
 }
 
 .navbar-toggler-icon {
-    background-color: #ffffff; /* White icon for the toggler */
+    background-color: #1e1e1e; /* White icon for the toggler */
 }
 
 /* Navbar on scroll: subtle color change */
