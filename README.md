@@ -98,6 +98,7 @@ The entire process is integrated into a **Flask web app** with interactive data 
    ```bash
    git clone https://github.com/yourusername/social-media-engagement.git
    cd social-media-engagement
+   
 
 
 ### Steps
@@ -110,7 +111,7 @@ cd social-media-engagement
 
 2. Set up a virtual environment:
 
-```
+```bash
 python3 -m venv venv
 source venv/bin/activate # For macOS/Linux
 venv\Scripts\activate # For Windows
