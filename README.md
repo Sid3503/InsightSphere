@@ -96,7 +96,7 @@ The entire process is integrated into a **Flask web app** with interactive data 
     Clone the project to your local machine:
 
     ```bash
-    git clone https://github.com/yourusername/social-media-engagement.git
+    git clone https://github.com/Sid3503/InsightSphere.git
     cd social-media-engagement
     ``` 
 
